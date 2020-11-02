@@ -1,39 +1,17 @@
-const redux = require('redux');
-const createStore=redux.createStore;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-const initialState = {
-    numberOfBooks: 10
-}
-
-
-
-function buyBook(){
-    return {
-        type : "Buy_Book",
-        info : "my First Redux Code"
-    }
-}
-
-// Reducer working
-// (prevState, action) =>newState
-
-const Reducer = (state= initialState, action) =>{
-    switch(action.type){
-        case "Buy_Book ":return{
-            ...state,
-            numberOfBooks:state.numberOfBooks-1 
-        }
-        default : return state ;
-    }
-}
-
-const store = createStore(Reducer);
-console.log("initial State", store.getState());
-const unsubscribe = store.subscribe(()=> { console.log('Updated state value', store.getState())});
-store.dispatch(buyBook());
-store.dispatch(buyBook());
-store.dispatch(buyBook());
-store.dispatch(buyBook());
-store.dispatch(buyBook());
-unsubscribe();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

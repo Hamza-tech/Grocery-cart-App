@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+
+body{
+  background-image: url('bricks.jpg');
+}
+
+#app-container {
+  width: 600px;
+  background-color: white;
+  border: solid black 1px;
+  margin: auto;
+  padding: 5px;
+}
+
+#grocery-container{
+  display: flex;
+  justify-content: center;
+}
+#grocery-cart, #grocery-items{
+  width : auto;
+  margin: 2%;
+}
